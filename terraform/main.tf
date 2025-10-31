@@ -25,8 +25,12 @@ data "aws_subnets" "default" {
 }
 
 # Create a simple S3 bucket to demonstrate successful deployment
+resource "random_id" "suffix" {
+  byte_length = 8
+}
+
 resource "aws_s3_bucket" "portfolio_demo" {
-  bucket = "wasim-rahman-portfolio-2024"
+  bucket = "wasim-rahman-portfolio-${random_id.suffix.hex}"
 
   tags = {
     Project     = "AWS Three-Tier Application"
