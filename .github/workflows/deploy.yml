@@ -20,20 +20,30 @@ jobs:
       with:
         python-version: '3.9'
 
-    - name: Install dependencies
+    - name: Install Python dependencies
       run: |
         cd backend
         pip install -r requirements.txt
 
-    - name: Run tests
+    - name: Run Python tests
       run: |
         cd backend
         python -c "import flask; print('Flask installed successfully')"
 
-    - name: Terraform fmt
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: '1.5.0'
+
+    - name: Terraform Format Check
       run: |
         cd terraform
         terraform fmt -check
+
+    - name: Terraform Init
+      run: |
+        cd terraform
+        terraform init
 
     - name: Show success message
       run: echo "CI pipeline completed successfully! Manual deployment required for AWS resources."
