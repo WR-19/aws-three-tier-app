@@ -1,27 +1,27 @@
-# 🎉 AWS Three-Tier Project - COMPLETE
+# AWS Three-Tier Project - COMPLETE
 
-## ✅ What's Been Accomplished
+## What's Been Accomplished
 
-### 🌐 Live Portfolio Site
+### Live Portfolio Site
 - **URL**: https://wr-19.github.io/aws-three-tier-app/
-- **Status**: ✅ LIVE and working
+- **Status**: LIVE and working
 - **Features**: Professional portfolio page with project architecture
 
-### 📁 Complete Code Repository
+### Complete Code Repository
 - **GitHub**: https://github.com/WR-19/aws-three-tier-app
-- **Status**: ✅ All code pushed with professional commit history
+- **Status**: All code pushed with professional commit history
 - **Structure**: Complete three-tier architecture implementation
 
-### 🏗️ Infrastructure as Code
+### Infrastructure as Code
 - **Terraform Modules**: VPC, RDS, ECS fully implemented
 - **Validation**: Terraform code validates successfully
 - **Architecture**: Complete cloud-native design
 
-### 🔄 CI/CD Pipeline
+### CI/CD Pipeline
 - **GitHub Actions**: Automated testing pipeline
-- **Status**: ✅ Configured and ready
+- **Status**: Configured and ready
 
-## 🚀 Real-World Experience Gained
+## Real-World Experience Gained
 
 ### Cloud Engineering Challenges Encountered:
 1. **VPC Limit Management** - Handled AWS resource constraints
@@ -36,7 +36,7 @@
 - CI/CD Automation
 - Problem-solving in constrained environments
 
-## 📊 Portfolio Ready
+## Portfolio Ready
 
 This project is now **recruiter-ready** and demonstrates:
 - Complete cloud architecture understanding
