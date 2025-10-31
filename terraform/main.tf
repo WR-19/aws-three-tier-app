@@ -43,11 +43,12 @@ module "vpc" {
 module "rds" {
   source = "./modules/rds"
 
-  name_prefix     = local.name_prefix
-  vpc_id          = module.vpc.vpc_id
-  private_subnets = module.vpc.private_subnets
-  database_name   = var.database_name
-  database_user   = var.database_user
+  name_prefix              = local.name_prefix
+  vpc_id                   = module.vpc.vpc_id
+  private_subnets          = module.vpc.private_subnets
+  allowed_security_groups  = [module.ecs.ecs_service_security_group_id]
+  database_name            = var.database_name
+  database_user            = var.database_user
 
   tags = local.common_tags
 }
@@ -68,17 +69,38 @@ module "ecs" {
 
 # Output all important values
 output "vpc_id" {
-  value = module.vpc.vpc_id
+  description = "VPC ID"
+  value       = module.vpc.vpc_id
 }
 
 output "database_host" {
-  value = module.rds.database_host
+  description = "RDS instance hostname"
+  value       = module.rds.database_host
+  sensitive   = true
+}
+
+output "database_password" {
+  description = "RDS instance password"
+  value       = module.rds.database_password
+  sensitive   = true
 }
 
 output "ecs_cluster_name" {
-  value = module.ecs.ecs_cluster_name
+  description = "ECS cluster name"
+  value       = module.ecs.ecs_cluster_name
 }
 
 output "ecr_repository_url" {
-  value = module.ecs.ecr_repository_url
+  description = "ECR repository URL for Docker images"
+  value       = module.ecs.ecr_repository_url
+}
+
+output "public_subnets" {
+  description = "List of public subnet IDs"
+  value       = module.vpc.public_subnets
+}
+
+output "private_subnets" {
+  description = "List of private subnet IDs"
+  value       = module.vpc.private_subnets
 }
