@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS Three-Tier Cloud Application</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -35,6 +39,47 @@
             font-size: 1.2em;
             opacity: 0.9;
         }
+
+        /* Contact Buttons */
+        .contact-links {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Brand hover colors */
+        .contact-btn[href*="github"]:hover {
+            background-color: #333;
+        }
+        .contact-btn[href*="linkedin"]:hover {
+            background-color: #0077b5;
+        }
+        .contact-btn[href*="mailto"]:hover {
+            background-color: #ea4335;
+        }
+
+        /* Cards and content */
         .card {
             background: white;
             border-radius: 10px;
@@ -102,22 +147,24 @@
             border-radius: 10px;
             margin: 10px;
         }
-        .contact-links {
-            margin-top: 20px;
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 40px;
         }
-        .contact-link {
+        footer a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
-            border-bottom: 1px solid transparent;
-            transition: border-bottom 0.3s;
         }
-        .contact-link:hover {
-            border-bottom: 1px solid white;
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -126,18 +173,28 @@
             <p style="margin-top: 20px; font-size: 1.1em; opacity: 0.8;">
                 Developed by <strong>Wasim Rahman</strong> | Cloud Engineer & DevOps Specialist
             </p>
-            
+
             <div class="contact-links">
-                <a href="https://github.com/WR-19" class="contact-link" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/wasim-r" class="contact-link" target="_blank">LinkedIn</a>
-                <a href="mailto:wasimrahman410@gmail.com" class="contact-link">Email</a>
+                <a href="https://github.com/WR-19" class="contact-btn" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/wasim-r" class="contact-btn" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:wasimrahman410@gmail.com" class="contact-btn" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
         </div>
 
         <div class="card">
             <h2>Project Status</h2>
-            <p><span class="status-badge">Code Complete</span> <span class="status-badge">Terraform Validated</span> <span class="status-badge">GitHub Ready</span></p>
-            
+            <p>
+                <span class="status-badge">Code Complete</span>
+                <span class="status-badge">Terraform Validated</span>
+                <span class="status-badge">GitHub Ready</span>
+            </p>
+
             <div class="architecture">
                 <div class="arch-diagram">
                     <strong>Frontend</strong><br>S3 + CloudFront<br>↓
@@ -172,14 +229,14 @@ backend/<br>
 ├── app.py              # Flask REST API<br>
 ├── Dockerfile          # Container definition<br>
 ├── requirements.txt    # Python dependencies<br>
-└── init_db.py         # Database setup<br><br>
+└── init_db.py          # Database setup<br><br>
 terraform/<br>
-├── main.tf            # Root configuration<br>
+├── main.tf             # Root configuration<br>
 ├── modules/<br>
-│   ├── vpc/           # Networking<br>
-│   ├── ecs/           # Container orchestration<br>
-│   └── rds/           # Database<br>
-└── variables.tf       # Environment config
+│   ├── vpc/            # Networking<br>
+│   ├── ecs/            # Container orchestration<br>
+│   └── rds/            # Database<br>
+└── variables.tf        # Environment config
             </div>
         </div>
 
@@ -187,7 +244,7 @@ terraform/<br>
             <h2>Live Repository & Deployment</h2>
             <p>All source code is available on GitHub with professional commit history:</p>
             <a href="https://github.com/WR-19/aws-three-tier-app" class="btn" target="_blank">View GitHub Repository</a>
-            
+
             <p style="margin-top: 20px;"><strong>Deployment Ready:</strong> Run <code>terraform apply</code> to deploy full infrastructure to AWS</p>
             <div class="code">
 # Deploy to AWS<br>
@@ -211,15 +268,14 @@ terraform apply
             </ul>
         </div>
 
-        <!-- Professional Footer -->
-        <div style="text-align: center; color: white; padding: 40px 20px; margin-top: 40px;">
+        <footer>
             <p>Wasim Rahman | Cloud & DevOps Project</p>
             <p style="opacity: 0.7; margin-top: 10px;">
-                <a href="https://github.com/WR-19" style="color: white; text-decoration: none;">GitHub</a> • 
-                <a href="https://www.linkedin.com/in/wasim-r" style="color: white; text-decoration: none;">LinkedIn</a> • 
-                <a href="mailto:wasimrahman410@gmail.com" style="color: white; text-decoration: none;">Contact</a>
+                <a href="https://github.com/WR-19">GitHub</a> • 
+                <a href="https://www.linkedin.com/in/wasim-r">LinkedIn</a> • 
+                <a href="mailto:wasimrahman410@gmail.com">Contact</a>
             </p>
-        </div>
+        </footer>
     </div>
 </body>
 </html>
