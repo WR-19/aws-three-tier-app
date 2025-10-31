@@ -29,7 +29,7 @@ module "vpc" {
 
   name_prefix    = local.name_prefix
   vpc_cidr       = var.vpc_cidr
-  azs            = var.availability_zones
+  azs            = var.azs
   public_subnets = var.public_subnets
 
   tags = local.common_tags
