@@ -8,11 +8,6 @@ variable "vpc_id" {
   type        = string
 }
 
-variable "private_subnets" {
-  description = "List of private subnet IDs"
-  type        = list(string)
-}
-
 variable "database_host" {
   description = "Database host"
   type        = string

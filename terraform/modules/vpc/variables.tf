@@ -1,10 +1,10 @@
 variable "name_prefix" {
-  description = "Prefix for resource names"
+  description = "Name prefix for resources"
   type        = string
 }
 
 variable "vpc_cidr" {
-  description = "CIDR block for VPC"
+  description = "VPC CIDR block"
   type        = string
 }
 
@@ -19,7 +19,7 @@ variable "public_subnets" {
 }
 
 variable "tags" {
-  description = "Common tags"
+  description = "Additional tags"
   type        = map(string)
   default     = {}
 }

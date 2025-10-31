@@ -1,14 +1,19 @@
 output "vpc_id" {
-  description = "ID of the VPC"
+  description = "VPC ID"
   value       = aws_vpc.main.id
 }
 
 output "public_subnets" {
-  description = "IDs of the public subnets"
+  description = "List of public subnet IDs"
   value       = aws_subnet.public[*].id
 }
 
-output "internet_gateway_id" {
-  description = "ID of the Internet Gateway"
-  value       = aws_internet_gateway.main.id
+output "private_subnets" {
+  description = "List of private subnet IDs"
+  value       = []  # Empty for now
+}
+
+output "azs" {
+  description = "List of availability zones"
+  value       = var.azs
 }

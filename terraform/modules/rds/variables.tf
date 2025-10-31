@@ -8,16 +8,6 @@ variable "vpc_id" {
   type        = string
 }
 
-variable "private_subnets" {
-  description = "List of private subnet IDs"
-  type        = list(string)
-}
-
-variable "allowed_security_groups" {
-  description = "List of security group IDs allowed to access RDS"
-  type        = list(string)
-}
-
 variable "database_name" {
   description = "Database name"
   type        = string
